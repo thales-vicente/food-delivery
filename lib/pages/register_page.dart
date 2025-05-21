@@ -1,25 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/components/my_button.dart';
-import 'package:food_delivery/components/my_textfield.dart';
 
-class LoginPage extends StatefulWidget {
+import '../components/my_button.dart';
+import '../components/my_textfield.dart';
+
+class RegisterPage extends StatefulWidget {
   final void Function()? onTap;
 
-  const LoginPage({super.key, this.onTap});
+  const RegisterPage({super.key, this.onTap});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   // TODO text editing controllers
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme
+          .of(context)
+          .colorScheme
+          .background,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -28,17 +33,23 @@ class _LoginPageState extends State<LoginPage> {
             Icon(
               Icons.lock_open_rounded,
               size: 100,
-              color: Theme.of(context).colorScheme.inversePrimary,
+              color: Theme
+                  .of(context)
+                  .colorScheme
+                  .inversePrimary,
             ),
 
             const SizedBox(height: 25),
 
             // TODO message, app slogan
             Text(
-              "Food Delivery App",
+              "Let's create an account for you",
               style: TextStyle(
                 fontSize: 16,
-                color: Theme.of(context).colorScheme.inversePrimary,
+                color: Theme
+                    .of(context)
+                    .colorScheme
+                    .inversePrimary,
               ),
             ),
 
@@ -60,30 +71,45 @@ class _LoginPageState extends State<LoginPage> {
               obscureText: true,
             ),
 
+            const SizedBox(height: 10),
+
+            // TODO confirm password textfield
+            MyTextField(
+              controller: confirmPasswordController,
+              hintText: "Confirm password",
+              obscureText: true,
+            ),
+
             const SizedBox(height: 25),
 
-            // TODO sign in button
-            MyButton(text: "Sign In", onTap: () {}),
+            // TODO sign up button
+            MyButton(text: "Sign Up", onTap: () {}),
 
             const SizedBox(height: 25),
 
-            // TODO not a member? register now
+            // TODO already have an account? Login here
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Not a member?",
+                  "already have an account?",
                   style: TextStyle(
-                    color: Theme.of(context).colorScheme.inversePrimary,
+                    color: Theme
+                        .of(context)
+                        .colorScheme
+                        .inversePrimary,
                   ),
                 ),
                 const SizedBox(width: 4),
                 GestureDetector(
                   onTap: widget.onTap,
                   child: Text(
-                    "Register now",
+                    "Login now",
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.inversePrimary,
+                      color: Theme
+                          .of(context)
+                          .colorScheme
+                          .inversePrimary,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
