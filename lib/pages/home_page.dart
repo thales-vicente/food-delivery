@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/components/my_current_location.dart';
 import 'package:food_delivery/components/my_drawer.dart';
 import 'package:food_delivery/components/my_silver_app_bar.dart';
 
@@ -22,6 +23,7 @@ class HomePage extends StatelessWidget {
                       color: Theme.of(context).colorScheme.secondary,
                     ),
                     // TODO my current location
+                    MyCurrentLocation(),
 
                     // TODO description box
                   ],
