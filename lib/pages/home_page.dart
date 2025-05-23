@@ -3,7 +3,7 @@ import 'package:food_delivery/components/my_current_location.dart';
 import 'package:food_delivery/components/my_description_box.dart';
 import 'package:food_delivery/components/my_drawer.dart';
 import 'package:food_delivery/components/my_food_tile.dart';
-import 'package:food_delivery/components/my_silver_app_bar.dart';
+import 'package:food_delivery/components/my_sliver_app_bar.dart';
 import 'package:food_delivery/components/my_tab_bar.dart';
 import 'package:food_delivery/models/food.dart';
 import 'package:food_delivery/models/restaurant.dart';
