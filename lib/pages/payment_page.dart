@@ -41,20 +41,21 @@ class _PaymentPageState extends State<PaymentPage> {
               actions: [
                 // TODO cancel button
                 TextButton(
-                  onPressed:
-                      () => Navigator.pop(context),
+                  onPressed: () => Navigator.pop(context),
                   child: const Text("Cancel"),
                 ),
 
                 // TODO yes button
                 TextButton(
-                  onPressed:
-                      () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DeliveryProgressPage(),
-                    ),
-                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DeliveryProgressPage(),
+                      ),
+                    );
+                  },
                   child: const Text("Yes"),
                 ),
               ],
