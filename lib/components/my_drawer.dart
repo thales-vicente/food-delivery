@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/components/my_drawer_title.dart';
+import 'package:food_delivery/services/auth/auth_services.dart';
 
 import '../pages/settings_page.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
+
+  void logout(){
+    final authService = AuthServices();
+    authService.signOut();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +57,7 @@ class MyDrawer extends StatelessWidget {
           const Spacer(),
 
           // TODO logout list title
-          MyDrawerTitle(text: "L O G O U T", icon: Icons.logout, onTap: () {}),
+          MyDrawerTitle(text: "L O G O U T", icon: Icons.logout, onTap: logout),
 
           const SizedBox(height: 25),
         ],

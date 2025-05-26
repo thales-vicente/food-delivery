@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:food_delivery/components/my_button.dart';
-
 import 'delivery_progress_page.dart';
 
 class PaymentPage extends StatefulWidget {
@@ -73,6 +72,7 @@ class _PaymentPageState extends State<PaymentPage> {
         foregroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text("Checkout"),
       ),
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           // TODO credit card
@@ -105,6 +105,7 @@ class _PaymentPageState extends State<PaymentPage> {
           const Spacer(),
 
           MyButton(onTap: userTappedPay, text: "Pay now"),
+
           const SizedBox(height: 25),
         ],
       ),
